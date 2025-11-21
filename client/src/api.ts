@@ -3,7 +3,9 @@ import { Dish, LoginResponse, NewUser, Order, User } from "./types";
 // GET Dish
 export const fetchDish = async (): Promise<Dish[]> => {
   try {
-    const response = await fetch("http://localhost:3000/dishes");
+    const response = await fetch(
+      "https://restaurant-app-update.onrender.com/dishes"
+    );
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
@@ -22,7 +24,9 @@ export const fetchDish = async (): Promise<Dish[]> => {
 export const fetchDishById = async (id: string): Promise<Dish> => {
   //Fetch the single dish
   try {
-    const response = await fetch(`http://localhost:3000/dishes/${id}`);
+    const response = await fetch(
+      `https://restaurant-app-update.onrender.com/${id}`
+    );
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
@@ -43,11 +47,14 @@ export const fetchUserById = async (
   token: string
 ): Promise<User> => {
   try {
-    const response = await fetch(`http://localhost:3000/users/${id}`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    const response = await fetch(
+      `https://restaurant-app-update.onrender.com/${id}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
     if (!response.ok) {
       throw new Error("Failed to fetch User");
     }
@@ -69,13 +76,16 @@ export const login = async (
   password: string
 ): Promise<LoginResponse> => {
   try {
-    const response = await fetch(`http://localhost:3000/login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ username, password }),
-    });
+    const response = await fetch(
+      `https://restaurant-app-update.onrender.com/login`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, password }),
+      }
+    );
 
     if (!response.ok) {
       throw new Error("Login failed");
@@ -107,13 +117,16 @@ export const createAccount = async (
   phoneNumber: string
 ): Promise<NewUser> => {
   try {
-    const response = await fetch("http://localhost:3000/users", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ username, password, name, email, phoneNumber }),
-    });
+    const response = await fetch(
+      "https://restaurant-app-update.onrender.com/users",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, password, name, email, phoneNumber }),
+      }
+    );
     if (!response.ok) {
       throw new Error("Failed creating user.");
     }
@@ -137,19 +150,22 @@ export const createOrder = async (
   orderDishes: { dishId: string; quantity: number }[]
 ): Promise<Order> => {
   try {
-    const response = await fetch("http://localhost:3000/orders", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify({
-        time: time.toISOString(),
-        orderStatus: orderStatus || "Penfing", //Default value
-        userId: userId,
-        orderDishes: orderDishes,
-      }),
-    });
+    const response = await fetch(
+      "https://restaurant-app-update.onrender.com/orders",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          time: time.toISOString(),
+          orderStatus: orderStatus || "Penfing", //Default value
+          userId: userId,
+          orderDishes: orderDishes,
+        }),
+      }
+    );
     if (!response.ok) {
       throw new Error("Failed creating order.");
     }
@@ -170,7 +186,7 @@ export const fetchOrdersByUserId = async (
 ): Promise<Order> => {
   try {
     const response = await fetch(
-      `http://localhost:3000/orders/user/${userId}`,
+      `https://restaurant-app-update.onrender.com/orders/user/${userId}`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
