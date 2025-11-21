@@ -6,9 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/index.ts",
-    "test:api": "newman run ./newman_tests/Tests.postman_collection.json  -e ./newman_tests/API.postman_environment",
-    "build": "npx prisma generate && tsc",
-    "start": "node dist/index.js"
+    "test:api": "newman run ./newman_tests/Tests.postman_collection.json  -e ./newman_tests/API.postman_environment"
   },
   "prisma": {
     "seed": "ts-node src/seed.ts"
@@ -23,10 +21,10 @@
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
     "pg": "^8.14.0",
-    "prisma": "^6.5.0",
     "winston": "^3.17.0"
   },
   "devDependencies": {
+    "prisma": "^6.5.0",
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "@types/jsonwebtoken": "^9.0.9",
@@ -37,6 +35,6 @@
     "typescript": "^5.8.2"
   },
   "engines": {
-    "node": ">=22 <23"
+    "node": "20.x"
   }
 }
