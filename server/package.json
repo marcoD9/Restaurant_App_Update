@@ -2,18 +2,17 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/index.ts",
-    "test:api": "newman run ./newman_tests/Tests.postman_collection.json  -e ./newman_tests/API.postman_environment"
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:api": "newman run ./newman_tests/Tests.postman_collection.json -e ./newman_tests/API.postman_environment"
   },
   "prisma": {
     "seed": "ts-node src/seed.ts"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "@prisma/client": "^6.5.0",
     "cors": "^2.8.5",
