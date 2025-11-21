@@ -1,0 +1,44 @@
+[
+  {
+    "id": "936DA01F-9ABD-4d9d-80C7-02AF85C822A8",
+    "name": "Pizza Margherita",
+    "description": "Classic pizza with tomato sauce, mozzarella cheese, and fresh basil.",
+    "price": 10,
+    "image": "https://dishesimages.netlify.app/pizza-margherita.png"
+  },
+  {
+    "id": "10874987-12b2-4d51-897b-944917992931",
+    "name": "Pasta alla Carbonara",
+    "description": "Pasta with eggs, guanciale (cured pork cheek), pecorino cheese, and black pepper.",
+    "price": 12,
+    "image": "https://dishesimages.netlify.app/carbonara.png"
+  },
+  {
+    "id": "56874987-12b2-4d51-897b-944917992931",
+    "name": "Pasta Aglio e Olio",
+    "description": "Spaghetti with garlic, olive oil, and chili flakes.",
+    "price": 8,
+    "image": "https://dishesimages.netlify.app/pasta_aglio_olio.png"
+  },
+  {
+    "id": "34789237-12b2-4d51-897b-944917992931",
+    "name": "Gnocchi",
+    "description": "Potato dumplings served with mushrooms and truffle sauce.",
+    "price": 12,
+    "image": "https://dishesimages.netlify.app/gnocchi.png"
+  },
+  {
+    "id": "18189237-29f2-4d51-897c-944557992931",
+    "name": "Lasagna",
+    "description": "Authentic Lasagna with tomato sauce, meat and parmesan cheese.",
+    "price": 18,
+    "image": "https://dishesimages.netlify.app/lasagna.png"
+  },
+  {
+    "id": "45674987-12b2-4d51-897b-944917992931",
+    "name": "Tiramisù",
+    "description": "Italian dessert made with ladyfingers, mascarpone cheese, eggs, and cocoa.",
+    "price": 12,
+    "image": "https://dishesimages.netlify.app/tiramisù.png"
+  }
+]
