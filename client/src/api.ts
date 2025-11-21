@@ -25,7 +25,7 @@ export const fetchDishById = async (id: string): Promise<Dish> => {
   //Fetch the single dish
   try {
     const response = await fetch(
-      `https://restaurant-app-update.onrender.com/${id}`
+      `https://restaurant-app-update.onrender.com/dishes/${id}`
     );
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
@@ -48,7 +48,7 @@ export const fetchUserById = async (
 ): Promise<User> => {
   try {
     const response = await fetch(
-      `https://restaurant-app-update.onrender.com/${id}`,
+      `https://restaurant-app-update.onrender.com/users/${id}`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
